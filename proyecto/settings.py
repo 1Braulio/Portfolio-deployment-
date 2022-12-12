@@ -15,26 +15,26 @@ import os
 import environ
 
 
-env = environ.Env(
-        DEBUG=(bool, False)
-    )
+# env = environ.Env(
+#         DEBUG=(bool, False)
+#     )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Initialise environment variables
 
-environ.Env.read_env(env_file = os.path.join(BASE_DIR.resolve().parent, '.env'))
+# environ.Env.read_env(env_file = os.path.join(BASE_DIR.resolve().parent, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'django-insecure-t+o$2t-ja#+p+qyqi6o5d4q_%ol&=3dlmyqcklrcxk2ys1(h-+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -93,11 +93,11 @@ WSGI_APPLICATION = 'proyecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASS'),
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'kAwF9rEc8izbwj2kEZWc',
+        'HOST': 'containers-us-west-161.railway.app',
+        'PORT': '7802'
     }
 }
 
