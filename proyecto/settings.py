@@ -12,16 +12,23 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-# import environ
-from dotenv import load_dotenv
+import environ
+# from dotenv import load_dotenv
 import dj_database_url
 
+env = environ.Env(
+        DEBUG=(bool, False)
+    )
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+environ.Env.read_env(env_file = os.path.join(BASE_DIR, '.env'))
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Initialise environment variables
-load_dotenv(os.path.join(BASE_DIR, ".env"))
+# load_dotenv(os.path.join(BASE_DIR, ".env"))
 # env = environ.Env(
 #         DEBUG=(bool, False)
 #     )
@@ -37,7 +44,7 @@ load_dotenv(os.path.join(BASE_DIR, ".env"))
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
