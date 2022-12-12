@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+            
+body {
+  background: black;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.mcanvas {position: relative; z-index: 1; display:block;}
+
+.item{
+  z-index: 3;
+  width:200px;
+  text-align:center;
+  display:block;
+  background-color: transparent;
+  border: 1px solid transparent;
+  margin-right: 10px;
+  margin-bottom: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  float:center;
+}
+

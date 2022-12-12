@@ -1,0 +1,10 @@
+<style>
+	#hello-msg{
+		font-size: 18px;
+		color: #afbfcf;
+		margin-right: 20px;
+	}
+</style>
+<h1>Home</h1>
+<span class="hello-msg">Hola {{request.user}}</span>
+<span><a class="hello-msg" href="{% url 'user:logout' %}">Cerrar sesión</a></span>

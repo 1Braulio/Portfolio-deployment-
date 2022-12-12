@@ -1,0 +1,19 @@
+{% extends 'outlayer.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="wrapper">
+	<div style="position:fixed; top:0;left:0; z-index:-1" class="mcanvas">
+		<canvas id="c"></canvas>
+	</div>
+	<div class="item">
+		<img src="{% static 'images/home.jpg' %}" alt="player">
+		<div>
+		<p> Braulio Escobar </p>
+		<a href="https://github.com/1Braulio"> Github </a> <br>
+		<a href=""> c </a>
+		</div>
+	</div>
+</div>
+{% endblock content %}

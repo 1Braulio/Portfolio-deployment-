@@ -1,0 +1,12 @@
+{% extends 'outlayer.html' %}
+
+{% block content %}
+
+<form method="POST" action="">
+	{% csrf_token %}
+	<p>Are you sure you want to delete {{project.title}}?</p>
+	<a href="{% url 'project:projects' %}">Go back</a> <br>
+	<input style="font-size: 1.6rem;" type="submit" value="Yes, I want to delete this project">
+</form>
+
+{% endblock content %}

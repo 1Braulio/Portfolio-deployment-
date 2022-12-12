@@ -1,0 +1,40 @@
+<!-- <h1>Navigation bar</h1> -->
+<!-- <a href="{% url 'home' %}"> Home </a> -->
+<!-- <a href="{% url 'project:projects' %}"> Projects </a> -->
+<!-- <a href="{% url 'project:create-project' %}"> Create new project </a> -->
+<!-- <a href="{url }"> Home </a> -->
+<!-- <hr>
+ -->
+{% load static %}
+
+<!-- Header Section -->
+<header class="header">
+    <div class="container container--narrow">
+        <a href="" class="header__logo">
+            <img style="height: 100px; object-fit: contain;" src="{% static 'images/profile.svg' %} " alt="Braulio" />
+        </a>
+
+        <nav class="header__nav">
+            <input type="checkbox" id="responsive-menu" />
+            <label for="responsive-menu" class="toggle-menu">
+                <span>Menu</span>
+                <div class="toggle-menu__lines"></div>
+            </label>
+            <ul class="header__menu">
+                <li class="header__menuItem"><a href="{% url 'home' %}">Home</a></li>
+                <li class="header__menuItem"><a href="{% url 'project:projects' %}">Projects</a></li>
+                <li class="header__menuItem"><a href="">c</a></li>
+
+
+
+                {% if request.user.is_authenticated %}
+                <!-- <li class="header__menuItem"><a href="">Home</a></li> -->
+                <li class="header__menuItem"><a href="{% url 'project:create-project' %}">Add Project</a></li>
+                <li class="header__menuItem"><a href="{% url 'logout' %}" class="btn btn--sub">Logout</a></li>
+                {% endif %}
+
+                
+            </ul>
+        </nav>
+    </div>
+</header>
