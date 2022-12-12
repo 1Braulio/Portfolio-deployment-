@@ -12,20 +12,20 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-import environ
+# import environ
 # from dotenv import load_dotenv
-import dj_database_url
+# import dj_database_url
 
-env = environ.Env(
-        DEBUG=(bool, False)
-    )
+# env = environ.Env(
+#         DEBUG=(bool, False)
+#     )
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-environ.Env.read_env(env_file = os.path.join(BASE_DIR, '.env'))
+# environ.Env.read_env(env_file = os.path.join(BASE_DIR, '.env'))
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+# DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Initialise environment variables
 # load_dotenv(os.path.join(BASE_DIR, ".env"))
@@ -44,7 +44,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'django-insecure-t+o$2t-ja#+p+qyqi6o5d4q_%ol&=3dlmyqcklrcxk2ys1(h-+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -104,20 +104,22 @@ WSGI_APPLICATION = 'proyecto.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'kAwF9rEc8izbwj2kEZWc',
+        'HOST': 'containers-us-west-161.railway.app',
+        'PORT': '7802'
+    }
 }
 
 
-# 
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'kAwF9rEc8izbwj2kEZWc',
-#         'HOST': 'containers-us-west-161.railway.app',
-#         'PORT': '7802'
-#     }
+#     "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 # }
+
+
+# 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
