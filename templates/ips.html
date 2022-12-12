@@ -1,0 +1,11 @@
+{% extends 'outlayer.html' %}
+
+{% load static %}
+
+{% block content %}
+<h4>IPS</h4>
+{% for ip in ips %}
+	<p>IP # {{ forloop.counter }} -> {{ip}} </p>
+{% endfor %}
+
+{% endblock content %}

@@ -40,7 +40,7 @@ class Project(models.Model):
 		return img
 
 
-
+# Este modelo no se usa
 class Review(models.Model):
 	# vote values
 	VOTE_TYPE = (
@@ -76,3 +76,10 @@ class Tag(models.Model):
 
 	def __str__(self):
 		return self.name
+
+
+# class IpModel(models.Model):
+# 	ipAddress = models.GenericIPAddressField()
+# 	pubdate = models.DateTimeField(auto_now_add = True)
+# 	def __str__(self):
+# 		return self.ipAddress
