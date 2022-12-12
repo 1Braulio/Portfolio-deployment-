@@ -1,4 +1,5 @@
 from ipware import get_client_ip
+from datetime import datetime
 # from .models import IpModel
 
 ipSet = set()
@@ -11,7 +12,7 @@ def is_valid_ip(get_response):
 		
 		ip = get_client_ip(request)
 		ip_address = ip[0]
-		print("ip: ", ip_address)
+		print("ip: ", ip_address, "|| time:", datetime.now() )
 		# get_ip= IpModel()
 
 		# get_ip.ipAddress = ip[0]

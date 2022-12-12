@@ -99,15 +99,15 @@ DATABASES = {
     "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 }
 
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'kAwF9rEc8izbwj2kEZWc',
-        'HOST': 'containers-us-west-161.railway.app',
-        'PORT': '7802'
-    }
-}
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'kAwF9rEc8izbwj2kEZWc',
+#         'HOST': 'containers-us-west-161.railway.app',
+#         'PORT': '7802'
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
