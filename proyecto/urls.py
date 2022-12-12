@@ -18,10 +18,33 @@ from django.urls import path, include
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.auth import logout
+from django.contrib import messages
+from django.contrib.auth import logout, authenticate, login
 from django.contrib.admin.views.decorators import staff_member_required
 from project.middleware import ipSet
 # authenticate, login, 
+
+# login
+def loginPage(request):
+    if request.user.is_authenticated:
+    # if False:
+        return redirect('home')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+            user = authenticate(request, username = username, password = password)
+
+            if user is not None:
+                login(request, user)
+                redirect('home')
+
+            else:
+                messages.info(request, 'usuario o contraseña es incorrecto')
+                
+        context = {}
+        return render(request, 'login.html', context)
 
 @staff_member_required
 def ipsView(request):
@@ -45,6 +68,7 @@ urlpatterns = [
     path('', home, name = 'home'),
     path('logout', logoutUser, name = 'logout'),
     path('ips/', ipsView, name = 'ips'),
+    path('superlogin/', loginPage, name='login')
 ]
     # path('', include('user.urls')),
 

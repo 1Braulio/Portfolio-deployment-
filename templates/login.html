@@ -1,0 +1,17 @@
+{% extends 'outlayer.html' %}
+{% block content %}
+<h1> Iniciar sesión </h1>
+
+<form method = "POST" action = "">
+	{% csrf_token %}
+	Usuario
+	<input type="text" name="username" placeholder="Username..." class="form-control"><br>
+	Contraseña
+	<input type="password" name="password" placeholder="Password..." class="form-control"><br>
+	<input type="submit" class="btn login_btn" value="Login"><br>
+	{% for message in messages %}
+		<p id="messages">{{message}}</p>
+	{% endfor %}
+	
+</form>
+{% endblock content %}
